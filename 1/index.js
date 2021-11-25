@@ -9,36 +9,37 @@ const port = 8080;
 
 
 const requireListener = function(req,res){
-    res.writeHead(300);
+    res.writeHead(200);
     let url = req.url
-    if (url == '/' || url == '/homepage') {
+    if (url === '/' || url === '/homepage') {
 
-        res.write("<h1>Home Page<h1>");
         
+        log.write(`\nHome Page Request Time =>> ${date}`)
         
-        log.write(`Home Page Request Time =>> ${date}`)
-        log.write(`Home Page Request End Time =>> ${date}`)
-        console.log("HomePage")  
+        log.write(`\nHome Page Request End Time =>> ${date}`)
+        console.log("HomePage")
+        res.end("<h1>Home Page<h1>");  
        
     
-      } else if (url == '/aboutus') {
+      } 
+      else if (url === '/aboutus') {
     
-        res.write("<h1>About us<h1>");
-        
         
         log.write(`\nAbout Us Page Request Time =>> ${date} `)
-        log.write(`About Us PageRequest End Time =>> ${date}`)
+        
+        log.write(`\nAbout Us Page Request End Time =>> ${date}`)
         console.log("AboutusPage")
+        res.end("<h1>About us<h1>");
       
       }
-      else if(url == "/contact"){
+      else if(url === "/contact"){
 
-        res.write("<h1>Contact<h1>")
-        
         
         log.write(`\nContact Page Request Time =>> ${date} `)
-        log.write(`Contact Page Request End Time =>> ${date}`)
+        
+        log.write(`\nContact Page Request End Time =>> ${date}`)
         console.log("ContactPage")
+        res.end("<h1>Contact<h1>")
         
       }
       
@@ -47,17 +48,17 @@ const requireListener = function(req,res){
     
       
     
-        res.write('<h1>404 Not Found Page<h1>');
-        
         
         log.write(`\nError Page Request Time =>> ${date} `)
+        
         log.write(`Error Page Request End Time =>> ${date}`)
         console.log("404 Not found Page")
+        res.end('<h1>404 Not Found Page<h1>');
         
     
     }
-    
-    res.end();
+  res.end()
+  
     
    
     
