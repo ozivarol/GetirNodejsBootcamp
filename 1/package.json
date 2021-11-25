@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Homework",
+  "main": "index.js",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "util": "^0.12.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "http",
+    "server"
+  ],
+  "author": "Kodluyoruz",
+  "license": "MIT"
+}
