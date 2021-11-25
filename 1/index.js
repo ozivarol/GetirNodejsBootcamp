@@ -1,13 +1,13 @@
 const http = require("http"); // import http
 const fs = require("fs");  // import fs 
-const date = new Date().toTimeString(); 
-const log = fs.createWriteStream("req.log", { flags: "a" });
+const date = new Date().toTimeString();   //convert date time
+const log = fs.createWriteStream("req.log", { flags: "a" }); // create log file
 
 const localhost = "localhost";
 const port = 8080;
 
 
-
+// Request and Response Function
 const requireListener = function(req,res){
     res.writeHead(200);
     let url = req.url
@@ -65,7 +65,7 @@ const requireListener = function(req,res){
    
     
 };
-const server = http.createServer(requireListener);
+const server = http.createServer(requireListener); // create server
 
 
 server.listen(port, localhost, () => {
