@@ -1,6 +1,6 @@
-const http = require("http");
-const fs = require("fs");
-const date = new Date().toTimeString();
+const http = require("http"); // import http
+const fs = require("fs");  // import fs 
+const date = new Date().toTimeString(); 
 const log = fs.createWriteStream("req.log", { flags: "a" });
 
 const localhost = "localhost";
